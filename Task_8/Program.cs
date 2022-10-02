@@ -1,11 +1,20 @@
 ﻿// Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
 
-size = 99;
-n<size;
-n>max;
+int n = new Random().Next(9,100);
 
-int max = a;
+int a1 = n % 10;
+int a2 = n / 10;
 
-if (a > max) max = a;
-if (b > max) max = b;
-if (c > max) max = c;
+if (a1 > a2)
+{
+  Console.WriteLine(n);
+  Console.WriteLine(a1);
+  Console.WriteLine("Первое значение числа больше");
+}
+else
+{
+  if (a1 < a2)
+  Console.WriteLine(n);
+  Console.WriteLine(a2);
+  Console.WriteLine("Второе значение числа больше");
+}
