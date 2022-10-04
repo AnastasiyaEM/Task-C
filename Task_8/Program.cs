@@ -11,10 +11,15 @@ if (a1 > a2)
   Console.WriteLine(a1);
   Console.WriteLine("Первое значение числа больше");
 }
-else
+else if (a1 < a2)
 {
-  if (a1 < a2)
   Console.WriteLine(n);
   Console.WriteLine(a2);
   Console.WriteLine("Второе значение числа больше");
+}
+else if (a1 == a2)
+{
+  Console.WriteLine(n);
+  Console.WriteLine(a2);
+  Console.WriteLine("Значения равны");
 }
