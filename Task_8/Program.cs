@@ -2,8 +2,8 @@
 
 int n = new Random().Next(9,100);
 
-int a1 = n % 10;
-int a2 = n / 10;
+int a1 = n / 10;
+int a2 = n % 10;
 
 if (a1 > a2)
 {
