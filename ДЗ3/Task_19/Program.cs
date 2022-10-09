@@ -1,18 +1,13 @@
 ﻿// Показать кубы чисел, заканчивающихся на четную цифру
 
+Console.WriteLine("Введите число A: ");
+int A = int.Parse(Console.ReadLine() ?? "0");
+Console.WriteLine("Введите число B: ");
+int B = int.Parse(Console.ReadLine() ?? "0");
 
-int A =1;
-int B = 4;
-int count = 0;
-int C = 1;
-int stepen = 3;
-int new_numberA = 0;
-
-while ( count < stepen)
+while (A <= B) 
 {
-    C = C * A;
+    int cube = A * A * A;
     A++;
-    C = C % 10;
-    new_numberA = C % 2 == 0;
-    Console.WriteLine ($"Число {A} заканчивается на четную цифру в кубе {new_numberA}");
+    if ( cube % 2 == 0) Console.WriteLine($" Куб числа {A} = {cube} и оканчивается на четную цифру");
 }
