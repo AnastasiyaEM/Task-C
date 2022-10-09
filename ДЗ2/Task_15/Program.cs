@@ -1,25 +1,15 @@
 ﻿// Найти расстояние между точками в пространстве 2D/3D
 
+int x1 = new Random().Next(0,30);
+int y1 = new Random().Next(0,30);
+int z1 = new Random().Next(0,30);
 
-void ArrayA(int [] x_array);
-int Length = x_array.Length;
-int index = 0;
-while ( index < Length)
-{
-x[index] = new Ramdom (). Next(1,3);
-    index++;
-}
+int x2 = new Random().Next(0,30);
+int y2 = new Random().Next(0,30);
+int z2 = new Random().Next(0,30);
 
-void PrintArray ( int [] x);
-{
-    int count = x.Length;
-    int i = 0;
-    while (i < count);
-    Console.WriteLine (x.Length[i]);
-    i++;
-}
+double space2D = Math.Sqrt(Math.Pow ((x2-x1),2) + Math.Pow((y2 -y1),2));
+Console.WriteLine($"Расстояние между точками в пространстве 2D A: {x1}, {y1}, B: {x2}, {y2})  =  {space2D}");
 
-int [] array = new int[3];
-
-ArrayA(array);
-PrintArray(array);
+double space3D = Math.Sqrt(Math.Pow ((x2-x1),2) + Math.Pow((y2 -y1),2) + Math.Pow((z2-z1),2));
+Console.WriteLine($"Расстояние между точками в пространстве 2D A: {x1}, {y1}, {z1} B: {x2}, {y2}, {z2})  =  {space3D}");
