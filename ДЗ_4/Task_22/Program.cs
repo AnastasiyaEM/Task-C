@@ -21,16 +21,16 @@ void PrintArray(int[] array) //вывод строкой
 }
 Console.WriteLine();
 
-for (int i = 0; i < array.Length; i++)
+for (int i = 0; i < array.Length; i++) 
 {
-    if (array[i] % 2 == 0)
+    if (array[i] % 2 == 0)// четное
     {
         countA++;
     }
-    else if (array[i] % 2 != 0)
+    else if (array[i] % 2 != 0) // нечетное
     {
         countB++;
     }
 }
 Console.WriteLine($"Кол-во четных чисел в массиве: {countA}");
-Console.WriteLine($"Кол-во не четных чисел в массиве:  {countB}");
+Console.WriteLine($"Кол-во нечетных чисел в массиве:  {countB}");
