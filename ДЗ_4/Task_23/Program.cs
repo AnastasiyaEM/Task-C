@@ -1,15 +1,8 @@
 ﻿//В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
 
-int[] array = new int[123];
-Random number = new Random();
-Console.WriteLine("Сформированный массив из 123 чисел: ");
-FillArray(array);
-PrintArray(array);
-int count = 0;
-
-void FillArray(int[] array) //заполнение массива
+void FillArray(int[] array, int min, int max) //заполнение массива
 {
-    for (int i = 0; i < array.Length; i++) array[i] = number.Next(0, 100);
+    for (int i = 0; i < array.Length; i++) array[i] = new Random().Next(min,max);
 }
 
 void PrintArray(int[] array) //вывод строкой
@@ -17,6 +10,15 @@ void PrintArray(int[] array) //вывод строкой
     for (int i = 0; i < array.Length; i++) Console.Write($"{array[i]} ");
 }
 Console.WriteLine();
+
+int[] array = new int[123];
+Console.WriteLine("Сформированный массив из 123 чисел: ");
+Console.WriteLine();
+
+FillArray(array, 0,100);
+
+PrintArray(array);
+int count = 0;
 
 for (int i = 0; i < array.Length; i++)
 {
@@ -27,3 +29,4 @@ for (int i = 0; i < array.Length; i++)
 }
 Console.WriteLine();
 Console.WriteLine($"Кол-во элементов из отрезка 10 - 99 равно {count}");
+Console.WriteLine();
