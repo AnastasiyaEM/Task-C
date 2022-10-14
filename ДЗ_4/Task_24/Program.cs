@@ -1,15 +1,9 @@
 ﻿//Найти сумму чисел одномерного массива стоящих на нечетной позиции
 
-int[] array = new int[15];
-Random number = new Random();
-Console.WriteLine("Сформированный массив из 15 чисел: ");
-FillArray(array);
-PrintArray(array);
-int SumNumbers = 0;
 
-void FillArray(int[] array) //заполнение массива
+void FillArray(int[] array, int min, int max) //заполнение массива
 {
-    for (int i = 0; i < array.Length; i++) array[i] = number.Next(0, 100);
+    for (int i = 0; i < array.Length; i++) array[i] = new Random().Next(min, max);
 }
 
 void PrintArray(int[] array) //вывод строкой
@@ -18,9 +12,19 @@ void PrintArray(int[] array) //вывод строкой
 }
 Console.WriteLine();
 
-for (int i = 1; i < array.Length; i=i+2)
-{
-    SumNumbers+=array[i];
-}
+int[] array = new int[4];
+
+FillArray(array, 0, 100);
+Console.WriteLine("Сформированный массив из 15 чисел: ");
+Console.WriteLine();
+
+PrintArray(array);
+Console.WriteLine();
+
+int SumNumbers = 0;
+
+for (int i = 1; i < array.Length; i = i + 2)
+    SumNumbers += array[i];
+
 Console.WriteLine();
 Console.WriteLine($"Сумма чисел на нечетных позициях равна {SumNumbers}");
