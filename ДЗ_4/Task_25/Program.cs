@@ -1,9 +1,6 @@
 ﻿// Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
-
-
-int size = 10;
-int[] array = new int[size]; 
+int[] array = new int[10]; 
 
 void FillArray(int[] array, int min, int max) 
 { 
@@ -19,15 +16,16 @@ void PrintArray (int[] array)
 } 
 
 
- FillArray(array, 0, 12); 
- Console.Write($"Сформированный массив: "); 
+FillArray(array, 0, 12); 
+Console.WriteLine("| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |"); 
+Console.Write($"  Сформированный массив: "); 
   
  
- PrintArray(array); 
- Console.WriteLine(); 
+PrintArray(array); 
+Console.WriteLine("| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |"); 
  
  
-for (int i = 0; i < size/2; i++) 
+for (int i = 0; i < array.Length/2; i++) 
 { 
     int multiplication = 0; 
     multiplication = array[i] * array[array.Length - i - 1]; 
