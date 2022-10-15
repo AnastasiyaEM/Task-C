@@ -7,16 +7,16 @@ int SumPositive = 0;
 
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = number.Next(0, 10);
+    array[i] = number.Next(-10, 10);
     Console.WriteLine("Element {0} = {1}", i + 1, array[i]);
 }
 
 for (int i = 0; i < array.Length; i++)
 {
     if( array[i] > 0) SumPositive += array[i];
-    else SumPositive += array[i];
+    else SumNegative += array[i];
 }
 
 
 Console.WriteLine($"Сумма положительных элементов  в массиве =  {SumPositive}");
-Console.WriteLine($"Сумма негативных элементов в массиве = {SumNegative}");
+Console.WriteLine($"Сумма отрицательных элементов в массиве = {SumNegative}");
