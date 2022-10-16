@@ -15,7 +15,7 @@ Console.WriteLine();
 int[] array = new int[4];
 
 FillArray(array, 0, 100);
-Console.WriteLine("Сформированный массив из 15 чисел: ");
+Console.WriteLine($"Сформированный массив из 4-х чисел: ");
 Console.WriteLine();
 
 PrintArray(array);
