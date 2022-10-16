@@ -1,40 +1,18 @@
 ﻿// В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
 
-
-void PrintArray(double[] array)
+Random r = new Random();
+double[] array = new double[20];
+double max = 0, min = 100;
+for (int i = 0; i < array.Length; i++) array[i] = r.NextDouble()*10;
+for (int i = 0; i < array.Length; i++)
 {
-    Console.Write("");
-    for (int index = 0; index < array.Length; index++)
-        Console.WriteLine($"{array[index]}" + "");
-
-    Console.WriteLine();
+    if (array[i] > max) max = array[i];
+    if (array[i] < min) min = array[i];
 }
 
-void FillArray(double[] array)
-{
-    for (int index = 0; index < array.Length; index++)
-        array[index] = new Random().NextDouble() * 10;
-}
-
-double[] array = new double[10];
-
-FillArray(array);
+for (int i = 0; i < array.Length; i++) 
+Console.WriteLine(" " + array[i]);
 Console.WriteLine();
-Console.Write($"  Сформированный массив: ");
-Console.WriteLine();
-
-PrintArray(array);
-Console.WriteLine();
-
-double max = array[index];
-double min = array[index];
-
-
-for (int index = 0; index < array.Length; index++)
-
-{
-    if (array[index] <  min) array [index] = min;
-    else array[index] = max;
-}
-Console.WriteLine ($"Максимальное число {max}");
-Console.WriteLine ($"Минимальное число {min}");
+Console.WriteLine("Максимальное значение:  " + max);
+Console.WriteLine("Минимальное значение  " + min);
+Console.WriteLine("Разница максимального и минимального значения:  " + (max - min));
