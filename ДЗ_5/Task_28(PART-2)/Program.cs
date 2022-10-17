@@ -62,40 +62,22 @@
 
 // 4. Функцию, которая проверяет является ли заданное число n полиндромом
 
-int Polindrome(string s)
-{
-    if (b[i]==b[int - 1])
-    
-    
-    
-    for (int i = 0; i < N / 2; ++i)
-        if (s[i] != s[s.Length - 1 - i]) return false;
-    return true;
-}
+// bool Polindrome(string num)
+// {
+//     for (int i = 0; i < num.Length / 2; i++)
 
+//         if (num[i] != num[num.Length - i - 1])
+//             return false;
+//     return true;
+// }
 
+// Console.Write("Введите число и узнаем, является ли оно полиндромом ");
+// int number = int.Parse(Console.ReadLine() ?? "0");
+// string num = number.ToString();
 
+// bool polindrom = Polindrome(num);
+// Console.WriteLine(polindrom);
 
-int Polindrome(int num)
-{
-    int N = num;
-    int revers = 0;
-
-    while (N)
-    {
-        int r = n % 10; // последняя цифра
-        revers *= 10 + r; // 
-        N = N / 10;
-    }
-    return (num == revers);
-}
-
-Console.Write("Введите число и узнаем, является ли оно полиндромом ");
-int N = int.Parse(Console.ReadLine() ?? "0");
-string n = N.ToString();
-
-Console.WriteLine("Число является полиндромом: 1- является, 0 - не является. ");
-Polindrome(num);
 
 
 // 5. Функцию, складывающую два целых числа
@@ -115,8 +97,43 @@ Polindrome(num);
 // Console.WriteLine($"Сумма чисел {numberA} и {numberB} равна: ");
 // SumNumbers(numberA, numberB);
 
+
+
 // 6. Функцию, определяющую является ли число простым, то есть возвращающую true, если число простое, иначе - false
+
+// bool Number(int n)
+// {
+//     for (int i = 2; i < n; i++)
+
+//         if (n % i == 0) return false;
+
+//     return true;
+
+// }
+
+// Console.WriteLine("Введите число: ");
+// int n = int.Parse(Console.ReadLine() ?? "0");
+
+// Console.WriteLine("Число простое? ");
+// bool num = Number(n);
+// Console.WriteLine(num);
 
 
 
 // 7. Функцию, определяющую является ли число чётным, то есть возвращающую true, если число чётное, иначе - false
+
+// bool ChetNumber(int number)
+// {
+//     bool x = false;
+//     if (number % 2 == 0) x = true;
+//     if (x == true) Console.WriteLine();
+//     else Console.WriteLine();
+//     return x;
+// }
+
+// Console.WriteLine("Введите число: ");
+// int number = int.Parse(Console.ReadLine() ?? "0");
+
+// Console.WriteLine("Число четное? ");
+// bool chetnumber = ChetNumber(number);
+// Console.WriteLine(chetnumber);
