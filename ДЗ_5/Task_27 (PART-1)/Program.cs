@@ -41,7 +41,6 @@ int MinValue(int[] array)
     int min = array[0];
     for (int i = 0; i < array.Length; i++)
         if (array[i] < min) min = array[i];
-
     return min;
 }
 
@@ -51,26 +50,25 @@ int MaxValue(int[] array)
     int max = array[0];
     for (int i = 0; i < array.Length; i++)
         if (array[i] > max) max = array[i];
-
     return max;
 }
 
 // Поиск суммы элементов массива
-void SumArray(int[] array)
+int SumArray(int[] array)
 {
     int sum = 0;
     for (int i = 0; i < array.Length; i++)
         sum += array[i];
-    Console.WriteLine(sum);
+    return sum;
 }
 
 // Поиск произведения элементов массива
-void MultiplicationArray(int[] array)
+int MultiplicationArray(int[] array)
 {
     int mulriplication = 1;
     for (int i = 0; i < array.Length; i++)
         mulriplication *= array[i];
-    Console.WriteLine(mulriplication);
+    return mulriplication;
 }
 
 //Поиск индекса заданного элемента в массиве, если такого элемента в массиве 
@@ -78,10 +76,7 @@ void MultiplicationArray(int[] array)
 int IndexElement(int[] array, int N)
 {
     for (int i = 0; i < array.Length; i++)
-        if (array[i] == N)
-        {
-            return i;
-        }
+        if (array[i] == N) return i;
     return -1;
 }
 
@@ -89,21 +84,15 @@ int IndexElement(int[] array, int N)
 //false – нет.
 bool ElementArray(int[] array, int value)
 {
-    bool x = false;
     for (int i = 0; i < array.Length; i++)
-        if (array[i] == value) x = true;
-    if (x == true) Console.WriteLine("Нашли число в массиве");
-    else Console.WriteLine("Не нашли число в массиве");
-    return x;
+        if (array[i] == value) return true;
+        return false;
 }
 
 // Среднее арифметическое элеметов массива
-void MeanArray(int[] array)
+float MeanArray(int[] array)
 {
-    double sum = 0;
-    for (int i = 0; i < array.Length; i++)
-        sum = (sum + array[i]);
-    Console.WriteLine(sum / array.Length);
+    return SumArray(array)/ ((float) array.Length);
 }
 
 // Подсчёт количества отрицательных элементов массива
@@ -125,12 +114,12 @@ int Count(int[] array, int a)
 }
 
 // Подсчёт количества чётных элементов в массив
-void ChetElement(int[] array)
+int ChetElement(int[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
         if (array[i] % 2 == 0) count++;
-    Console.WriteLine(count);
+    return (count);
 }
 
 // Подсчёт количества положительных элементов в массиве
@@ -143,24 +132,21 @@ int PositiveElements(int[] array)
 }
 
 // Подсчёт количества нечётных элементов в массиве
-void NechetElement(int[] array)
+int NechetElement(int[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
         if (array[i] % 2 != 0) count++;
-    Console.WriteLine(count);
+    return count;
 }
 
 // Проверка является ли массив отсортированным по возрастанию. 
 // Если массив отсортирован, то возвращать true, иначе - false.
 bool SortArray(int[] array)
 {
-    bool sort = true;
     for (int i = 1; i < array.Length; i++)
-        if (array[i] < array[i - 1]) sort = false;
-    if (sort == false) Console.WriteLine();
-    else Console.WriteLine();
-    return sort;
+        if (array[i] < array[i - 1]) return false;
+    return true;
 }
 
 
@@ -189,14 +175,12 @@ int maxvalue = MaxValue(array);
 Console.WriteLine("Максимальное значение: " + maxvalue);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-
-Console.WriteLine("Сумма элементов массива:");
-SumArray(array);
+int sum = SumArray(array);
+Console.WriteLine("Сумма элементов массива: " + sum);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-
-Console.WriteLine("Произведение элементов массива:");
-MultiplicationArray(array);
+int mulriplication = MultiplicationArray(array);
+Console.WriteLine("Произведение элементов массива: " + mulriplication);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
@@ -216,8 +200,7 @@ Console.WriteLine(elementArray);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
-Console.WriteLine("Среднее арифметическое элеметов массива:");
-MeanArray(array);
+Console.WriteLine($"Среднее арифметическое элеметов массива: {MeanArray(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
@@ -233,9 +216,8 @@ int count = Count(array, a);
 Console.WriteLine($"Заданное число встречается в массиве {count} раз.");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-
-Console.WriteLine("Кол-во четных элементов в массиве:");
-ChetElement(array);
+int chetElement = ChetElement(array);
+Console.WriteLine("Кол-во четных элементов в массиве: " + chetElement);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
@@ -243,9 +225,8 @@ int PosElements = PositiveElements(array);
 Console.WriteLine("Кол-во положительных элементов в массиве: " + PosElements);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-
-Console.WriteLine("Кол-во нечетных элементов в массиве:");
-NechetElement(array);
+int nechetElement = NechetElement(array);
+Console.WriteLine("Кол-во нечетных элементов в массиве: " + nechetElement);
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 Console.WriteLine("Отсортирован ли Ваш массив? ");
