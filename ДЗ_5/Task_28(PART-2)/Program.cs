@@ -28,7 +28,7 @@
 //     int F = 1;
 //     for (int i = 1; i <= N; i++)
 //         F *= i;
-//     Console.WriteLine(F);
+//     return F;
 // }
 
 // Console.WriteLine("Введите число искомого факториала: ");
