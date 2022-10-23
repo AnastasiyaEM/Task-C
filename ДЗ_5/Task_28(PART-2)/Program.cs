@@ -23,7 +23,7 @@
 
 // 2. Функцию, которая вычисляет факториал числа n
 
-// void Factorial(int N)
+// int Factorial(int N)
 // {
 //     int F = 1;
 //     for (int i = 1; i <= N; i++)
@@ -34,14 +34,14 @@
 // Console.WriteLine("Введите число искомого факториала: ");
 // int N = int.Parse(Console.ReadLine() ?? "0");
 
-// Console.WriteLine($"Факториал числа {N} равен ");
-// Factorial(N);
+// int f = Factorial(N);
+// Console.WriteLine($"Факториал числа {N} равен " + f);
 
 
 
 // 3. Функцию, которая вычисляет сумму цифр произвольного целого числа n
 
-// void SumNumeral(int n)
+// int SumNumeral(int n)
 // {
 //     int sum = 0;
 //     for (int i = 0; i < n; i++)
@@ -50,13 +50,12 @@
 //             sum += n % 10;
 //             n /= 10;
 //         }
-//     Console.WriteLine(sum);
+//    return sum;
 // }
 
 // Random rand = new Random();
 // int n = rand.Next(20, 40);
-// Console.WriteLine($"Сумма чисел в числе {n}");
-// SumNumeral(n);
+// Console.WriteLine($"Сумма чисел в числе {n} = {SumNumeral(n)}" );
 
 
 
@@ -82,11 +81,11 @@
 
 // 5. Функцию, складывающую два целых числа
 
-// void SumNumbers(int numberA, int numberB)
+// int SumNumbers(int numberA, int numberB)
 // {
 //     int newNumber = 0;
 //     if (numberA % 1 == 0 && numberB % 1 == 0) newNumber = numberA + numberB;
-//     Console.WriteLine(newNumber);
+//     return newNumber;
 // }
 
 // Console.WriteLine("Введите число №1: ");
@@ -94,8 +93,7 @@
 // Console.WriteLine("Введите число №2: ");
 // int numberB = int.Parse(Console.ReadLine() ?? "0");
 
-// Console.WriteLine($"Сумма чисел {numberA} и {numberB} равна: ");
-// SumNumbers(numberA, numberB);
+// Console.WriteLine($"Сумма чисел {numberA} и {numberB} равна: {SumNumbers(numberA, numberB)}" );
 
 
 
@@ -124,16 +122,11 @@
 
 // bool ChetNumber(int number)
 // {
-//     bool x = false;
-//     if (number % 2 == 0) x = true;
-//     if (x == true) Console.WriteLine();
-//     else Console.WriteLine();
-//     return x;
+//     if (number % 2 == 0) return true;
+//     return false;
 // }
+
 
 // Console.WriteLine("Введите число: ");
 // int number = int.Parse(Console.ReadLine() ?? "0");
-
-// Console.WriteLine("Число четное? ");
-// bool chetnumber = ChetNumber(number);
-// Console.WriteLine(chetnumber);
+// Console.WriteLine($"Число четное?  {ChetNumber(number)}");

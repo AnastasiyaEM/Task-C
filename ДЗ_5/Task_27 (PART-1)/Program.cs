@@ -166,37 +166,32 @@ Console.WriteLine();
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
-int minvalue = MinValue(array);
-Console.WriteLine("Минимальное значение: " + minvalue);
+Console.WriteLine($"Минимальное значение: {MinValue(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
-int maxvalue = MaxValue(array);
-Console.WriteLine("Максимальное значение: " + maxvalue);
+Console.WriteLine($"Максимальное значение: {MaxValue(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-int sum = SumArray(array);
-Console.WriteLine("Сумма элементов массива: " + sum);
+
+Console.WriteLine($"Сумма элементов массива: {SumArray(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-int mulriplication = MultiplicationArray(array);
-Console.WriteLine("Произведение элементов массива: " + mulriplication);
+
+Console.WriteLine($"Произведение элементов массива: {MultiplicationArray(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
 Console.WriteLine("Введите искомый элемент  массива:  (ищем индекс)");
 int N = int.Parse(Console.ReadLine() ?? "0");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
-int result = IndexElement(array, N);
-Console.WriteLine($"Заданный элемент массива соответсвует индексу {result}");
+Console.WriteLine($"Заданный элемент массива соответсвует индексу {IndexElement(array, N)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
 Console.WriteLine("Проверим, есть ли число в массиве? Введите число: ");
 int value = int.Parse(Console.ReadLine() ?? "0");
-Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
-bool elementArray = ElementArray(array, value);
-Console.WriteLine(elementArray);
+Console.WriteLine($"{ElementArray(array, value)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
@@ -204,32 +199,27 @@ Console.WriteLine($"Среднее арифметическое элеметов
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
-int NegElements = NegativeElements(array);
-Console.WriteLine("Кол-во отрицательных элементов в массиве: " + NegElements);
+Console.WriteLine($"Кол-во отрицательных элементов в массиве: {NegativeElements(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
 Console.WriteLine("С Вас число - с меня кол-во вхождений числа в массив: ");
 int a = int.Parse(Console.ReadLine() ?? "0");
-Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
-int count = Count(array, a);
-Console.WriteLine($"Заданное число встречается в массиве {count} раз.");
-Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
-
-int chetElement = ChetElement(array);
-Console.WriteLine("Кол-во четных элементов в массиве: " + chetElement);
+Console.WriteLine($"Заданное число встречается в массиве {Count(array, a)} раз/раза.");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 
-int PosElements = PositiveElements(array);
-Console.WriteLine("Кол-во положительных элементов в массиве: " + PosElements);
+Console.WriteLine($"Кол-во четных элементов в массиве: {ChetElement(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
-int nechetElement = NechetElement(array);
-Console.WriteLine("Кол-во нечетных элементов в массиве: " + nechetElement);
+
+Console.WriteLine($"Кол-во положительных элементов в массиве: {PositiveElements(array)}" );
+Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
+
+
+Console.WriteLine($"Кол-во нечетных элементов в массиве: {NechetElement(array)}");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
 
 Console.WriteLine("Отсортирован ли Ваш массив? ");
-bool sortArray = SortArray(array);
-Console.WriteLine(sortArray);
+Console.WriteLine($"({SortArray(array)})");
 Console.WriteLine("|~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~|");
