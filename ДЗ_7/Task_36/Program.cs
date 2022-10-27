@@ -15,9 +15,13 @@ void FillArray(int[,] array, int min, int max)
 void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
+    {
         for (int j = 0; j < array.GetLength(1); j++)
+        {
             Console.Write($"{array[i, j]} ");
+        }
     Console.WriteLine();
+    }
 }
 
 int Count(int[,] array, int number)
@@ -46,13 +50,13 @@ Console.WriteLine("Введите искомое число:");
 int number = int.Parse(Console.ReadLine()?? "0");
 
 int[,] array = new int[m, n];
-
-FillArray(array, 1, 10);
-PrintArray(array);
 int count = Count(array, number);
 if (count < 1)
     Console.WriteLine($" Число {number} не содержится в матрице");
 
+
+FillArray(array, 1, 10);
+PrintArray(array);
 PositionNumber(array, number);
 
 
