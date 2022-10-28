@@ -1,15 +1,34 @@
 ﻿// Задать двумерный массив следующим правилом: Aₘₙ = m+n
 
-Console.WriteLine("Введите количество строк:");
-int m = int.Parse(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов:");
-int n = int.Parse(Console.ReadLine());
-int[,] array = new int[m, n];
-
-for (int i = 0; i < m(0); i++)
+ void FillArray(int [,] mass)
 {
-    for (int j = 0; j < n(1); j++)
-        Console.Write($"{array[i, j]} ");
+    for (int m = 0; m < mass.GetLength(0); m++)
+    {
+        for (int n = 0; n < mass.GetLength(1); n++)
+        {
+            mass[m, n] = m + n;
+        }
+    }
 }
-Console.WriteLine();
 
+ void PrintArray(int [,] mass)
+{
+    for (int m = 0; m < mass.GetLength(0); m++) 
+    {
+        for (int n = 0; n < mass.GetLength(1); n++) 
+        {
+            Console.Write($"{mass[m, n]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.WriteLine("Введите число строк: ");
+int m = int.Parse(Console.ReadLine()?? "0");
+Console.WriteLine("Введите число столбцов: ");
+int n = int.Parse(Console.ReadLine()?? "0");
+int [,] mass = new int [m,n];
+
+FillArray(mass);
+Console.WriteLine("Двумерный массив согласно правилу: Aₘₙ = m+n");
+PrintArray(mass);
