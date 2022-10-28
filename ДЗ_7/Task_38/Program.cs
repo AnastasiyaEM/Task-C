@@ -17,37 +17,34 @@ void PrintArray(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j]} ");
+            Console.Write($"{matrix[i, j]}    ");
         }
         Console.WriteLine();
     }
 }
 
-double SumST(int[,] matrix)
+double[] SumST(int[,] matrix)
 {
-    for (int i = 0; i < matrix.GetLength(1); i++)
+    double[] mean = new double[matrix.GetLength(1)];
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
         double sum = 0;
-        int count = 0;
-        for (int j = 0; j < matrix.GetLength(0); j++)
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
             sum += matrix[i, j];
-            count++;
+            mean[j] = sum / matrix.GetLength(1);
         }
-        return sum;
     }
-return SumST(matrix) / matrix.GetLength(1);
+    return mean;
 }
 
-// double MeanArray(int[,] matrix)
-// {
-//     double mean = 0;
-//     for (int i = 0; i < matrix.GetLength(1); i++)
-//         for (int j = 0; j < matrix.GetLength(0); j++)
-//             mean = SumST(matrix) / matrix.GetLength(1);
-//     return mean;
-// }
-
+void PrintNewArray(double[] matrix)
+{
+    for (int i = 0; i < matrix.Length; i++)
+    {
+        Console.Write($"{matrix[i]}    ");
+    }
+}
 
 Console.WriteLine("Введите кол-во строк:");
 int m = int.Parse(Console.ReadLine() ?? "0");
@@ -59,6 +56,5 @@ int[,] matrix = new int[m, n];
 FillArray(matrix);
 PrintArray(matrix);
 Console.WriteLine();
-
-Console.WriteLine($"Сумма элементов массива по столбцам: " + SumST(matrix));
-//Console.WriteLine($"Среднее арифметическое столбцов: {MeanArray(matrix)}");
+double [] meanarray = SumST(matrix);
+PrintNewArray(meanarray);
