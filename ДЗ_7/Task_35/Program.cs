@@ -29,10 +29,9 @@ void PrintNewArray(int[,] array)
         {
             if (i % 2 == 0 && j % 2 == 0)
                 array[i, j] = i * i + j *j;
-
-        }
-        Console.WriteLine();
-    
+else  Console.Write($"{array[i, j]} ");
+        }  
+    Console.WriteLine();
 }
 
 Console.WriteLine("Введите количество строк:");
