@@ -22,16 +22,24 @@ void PrintArray(int[,] array)
     }
 }
 
-void PrintNewArray(int[,] array)
+int[,] SquareNumber(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 0; j < array.GetLength(1); j++)
+            if (i % 2 == 0 && j % 2 == 0) array[i, j] *= array[i, j];
+    return array;
+}
+
+void PrintNewArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (i % 2 == 0 && j % 2 == 0)
-                array[i, j] = i * i + j *j;
-else  Console.Write($"{array[i, j]} ");
-        }  
-    Console.WriteLine();
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
 }
 
 Console.WriteLine("Введите количество строк:");
@@ -40,8 +48,10 @@ Console.WriteLine("Введите количество столбцов:");
 int n = int.Parse(Console.ReadLine() ?? "0");
 
 int[,] array = new int[m, n];
-FillArray(array, 1,10);
+FillArray(array, 1, 10);
 Console.WriteLine("Array: ");
 PrintArray(array);
+
+int[,] squarnum = SquareNumber(array);
 Console.WriteLine("New Array: ");
-PrintNewArray(array);
+PrintNewArray(squarnum);
