@@ -1,10 +1,7 @@
 ﻿// Написать программу, которая обменивает элементы первой строки и последней строки
 
-// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
-int[,] GetMatrix(int row, int col, int min, int max)
+void FillArray(int[,] array, int min, int max)
 {
-    int[,] array = new int[row, col];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
@@ -12,52 +9,40 @@ int[,] GetMatrix(int row, int col, int min, int max)
             array[i, j] = new Random().Next(min, max);
         }
     }
-    return array;
 }
 
-void PrintMatrix(int[,] array)
+void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (array[i, j] >= 10) System.Console.Write($" {array[i, j]}  ");
-            else System.Console.Write($"  {array[i, j]}  ");
+            Console.Write($"{array[i, j]} ");
         }
-        System.Console.WriteLine();
+        Console.WriteLine();
     }
 }
 
-double[] GetArithmeticMean(int[,] array)
+int[,] Temp(int[,] array, int n, int m)
 {
-    double[] result = new double[array.GetLength(1)];
-    for (int j = 0; j < array.GetLength(1); j++)
+    for (int i = 0; i < n; i++)
     {
-        double sum = 0;
-        for (int i = 0; i < array.GetLength(0); i++)
-        {
-            sum += array[i, j];
-            result[j] = sum / array.GetLength(1);
-        }
+        int temp = array[0, i];
+        array[0, i] = array[n - 1, i];
+        array[n - 1, i] = temp;
     }
-    return result;
+    return array;
 }
 
-void PrintArray(double[] array)
-{
-    System.Console.WriteLine("------------------------");
-    for (int i = 0; i < array.Length; i++)
-    {
-        System.Console.Write($"  {array[i]}  ");
-    }
-}
+Console.WriteLine("Введите количество строк:");
+int m = int.Parse(Console.ReadLine() ?? "0");
+Console.WriteLine("Введите количество столбцов:");
+int n = int.Parse(Console.ReadLine() ?? "0");
 
-int row = 4;
-int col = 3;
-int min = 1;
-int max = 10;
-
-int[,] matrix = GetMatrix(row, col, min, max);
-PrintMatrix(matrix);
-double[] arithmeticMean = GetArithmeticMean(matrix);
-PrintArray(arithmeticMean);
+int[,] array = new int[m, n];
+FillArray(array, 1, 10);
+Console.WriteLine("Исходный массив: ");
+PrintArray(array);
+Console.WriteLine("Поменяем первую последнюю строку в массиве: ");
+int[,] temp = Temp(array, m, n);
+PrintArray(temp);
